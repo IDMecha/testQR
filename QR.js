@@ -22562,7 +22562,7 @@
     /**
      * SVG markup NameSpace
      */
-    BrowserQRCodeSvgWriter.SVG_NS = 'http://www.w3.org/2000/svg';
+    BrowserQRCodeSvgWriter.SVG_NS = '';//'http://www.w3.org/2000/svg';
 
     /*
      * Copyright 2008 ZXing authors
