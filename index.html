@@ -93,8 +93,8 @@ document.getElementById('webcam-preview').play();
         them and use a select to change the input device.</p> -->
 <form id="form">
       <div>
-        <!-- <a class="button" id="startButton">Start</a> -->
-        <button id="startButton"></button>
+        <a class="button" id="startButton">Start</a>
+      <!--   <button id="startButton"></button> -->
         <a class="button" id="resetButton">Reset</a>
       </div>
       </form>
@@ -202,7 +202,7 @@ document.getElementById('webcam-preview').play();
             })
 
             sourceSelect.onchange = () => {
-              selectedDeviceId = sourceSelect.value;
+              selectedDeviceId = "b8d1c52c7fe5ed61f13c96be68df8c6f928d16f3dfe30042342b997f6c7b513d";
             };
 
             const sourceSelectPanel = document.getElementById('sourceSelectPanel')
@@ -237,18 +237,18 @@ document.getElementById('webcam-preview').play();
     })
     
       $( window ).load(function() {
+    	console.log( "ready!" );
     	  /* let selectedDeviceId = sourceSelect.value; */
-     	  let selectedDeviceId = "b8d1c52c7fe5ed61f13c96be68df8c6f928d16f3dfe30042342b997f6c7b513d"";
+     	 /*  let selectedDeviceId = "b8d1c52c7fe5ed61f13c96be68df8c6f928d16f3dfe30042342b997f6c7b513d"";
 
           const codeReader = new ZXing.BrowserQRCodeReader()
-    	console.log( "ready!" );
 	    const decodingStyle = document.getElementById('decoding-style').value;
 
         if (decodingStyle == "once") {
           decodeOnce(codeReader, selectedDeviceId);
         } else {
           decodeContinuously(codeReader, selectedDeviceId);
-        }
+        } */
 	    console.log( "1111111111111111111111!" );
 	});
     
