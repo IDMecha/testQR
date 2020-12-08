@@ -103,13 +103,13 @@ document.getElementById('webcam-preview').play();
         <video id="video" width="100%" height="100%" style="border: 1px solid gray"></video>
       </div>
 
-      <div id="sourceSelectPanel" style="display:none">
+      <div id="sourceSelectPanel">
         <label for="sourceSelect">Change video source:</label>
         <select id="sourceSelect" style="max-width:400px">
         </select>
       </div>
 
-      <div style="display: none;">
+      <div >
         <label for="decoding-style"> Decoding Style:</label>
         <select id="decoding-style" size="1">
           <option value="once">Decode once</option>
@@ -137,7 +137,6 @@ document.getElementById('webcam-preview').play();
   <script type="text/javascript" src="QR.js"></script>
   <script type="text/javascript">
 
-  var test;
   
     function decodeOnce(codeReader, selectedDeviceId) {
       codeReader.decodeFromInputVideoDevice(selectedDeviceId, 'video').then((result) => {
@@ -199,14 +198,14 @@ document.getElementById('webcam-preview').play();
               sourceOption.text = element.label
               sourceOption.value = element.deviceId
               sourceSelect.appendChild(sourceOption)
-              if (element.label.indexOf("back")) {
+              /* if (element.label.indexOf("back")) {
             	  selectedDeviceId = element.deviceId;
-            	  test = selectedDeviceId;
-			}
+			} */
             })
 
             sourceSelect.onchange = () => {
               /* selectedDeviceId = "b8d1c52c7fe5ed61f13c96be68df8c6f928d16f3dfe30042342b997f6c7b513d"; */
+              selectedDeviceId = sourceSelect.value;
             };
 
             const sourceSelectPanel = document.getElementById('sourceSelectPanel')
@@ -242,7 +241,7 @@ document.getElementById('webcam-preview').play();
     
       $( window ).load(function() {
     	console.log( "ready!" );
-    	  /* let selectedDeviceId = sourceSelect.value; */
+    	  let selectedDeviceId = sourceSelect.value;
      	 /*  let selectedDeviceId = "b8d1c52c7fe5ed61f13c96be68df8c6f928d16f3dfe30042342b997f6c7b513d";
 
           const codeReader = new ZXing.BrowserQRCodeReader()
@@ -261,10 +260,9 @@ document.getElementById('webcam-preview').play();
     	document.getElementById('startButton').click();
 	} */
     function testStart() {
-   		let selectedDeviceId = "b8d1c52c7fe5ed61f13c96be68df8c6f928d16f3dfe30042342b997f6c7b513d"; 
-   		let selectedDeviceId = test; 
-	  	/* let selectedDeviceId = sourceSelect.value;
-	 	alert("test"); */
+/*    		let selectedDeviceId = "b8d1c52c7fe5ed61f13c96be68df8c6f928d16f3dfe30042342b997f6c7b513d"; 
+   		let selectedDeviceId = test;  */
+	  	 let selectedDeviceId = sourceSelect.value;
         const codeReader = new ZXing.BrowserQRCodeReader()
 	    const decodingStyle = document.getElementById('decoding-style').value;
 
