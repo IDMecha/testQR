@@ -1,43 +1,24 @@
- <html>
+<!--  <html>
 <head>
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
-<script>
-$(document).ready(function(){
-	if (!('url' in window) && ('webkitURL' in window)) {
-		window.URL = window.webkitURL;
-	}
-	$('#camcorder').change(function(e){
-		$('#mov').attr('src', URL.createObjectURL(e.target.files[0]));
-		// iOS Safari에서는 autoplay가 안먹히므로 알림
-		alert('동영상 재생버튼을 누르시오');
-	});
-});
 
-</script>
 </head>
 <body>
 <form name ="form1" action="/test.do" method="post" enctype="multipart/form-data" >
-
-<input type="file" id="camcorder" name="camcorder" capture="camcorder" accept="video/*" />
-<br />
-<video id="mov"></video>
-
- <!--  <input type="file" name="video" accept="video/*" capture>
-  <input type="submit" value="Upload"> -->
+  <input type="file" name="video" accept="video/*" capture>
+  <input type="submit" value="Upload">
 	
-<!--  <video aytoplay muted playsinline class="video" id="webcam-preview">
- <source src="video/video.mp4" type="video/mp4">
- </video> -->
- <video playsinline autoplay loop muted id="webcam-preview"></video>
-<!-- <video id="webcam-preview" autoplay="autoplay"> -->
-    <!-- <source src="/examples/media/sample_video_ogg.ogg" type="video/ogg">
+<video id="webcam-preview" src="demo.mp4" controls autoplay></video>
+<video id="webcam-preview" autoplay="autoplay">
+    <source src="/examples/media/sample_video_ogg.ogg" type="video/ogg">
     <source src="/examples/media/sample_video_mp4.mp4" type="video/mp4">
-    이 문장은 여러분의 브라우저가 video 태그를 지원하지 않을 때 화면에 표시됩니다! -->
-<!-- </video> -->
+    이 문장은 여러분의 브라우저가 video 태그를 지원하지 않을 때 화면에 표시됩니다!
+</video>
 <p id="result"></p>
 <script>
+document.getElementById('webcam-preview').play();
 
   const codeReader = new ZXing.BrowserQRCodeReader();
 
@@ -68,12 +49,12 @@ $(document).ready(function(){
 
 
 </body>
-</html>
+</html> -->
 
 
 
  
-<!--  <!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -241,4 +222,4 @@ $(document).ready(function(){
 
 </body>
 
-</html> -->
+</html>
