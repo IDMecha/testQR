@@ -109,7 +109,7 @@ document.getElementById('webcam-preview').play();
         </select>
       </div>
 
-      <div >
+      <div style="display: none;">
         <label for="decoding-style"> Decoding Style:</label>
         <select id="decoding-style" size="1">
           <option value="once">Decode once</option>
@@ -117,8 +117,8 @@ document.getElementById('webcam-preview').play();
         </select>
       </div>
 
-      <label>Result:</label>
-      <pre><code id="result"></code></pre>
+<!--       <label>Result:</label>
+      <pre><code id="result"></code></pre> -->
 
  <!--      <p>See the <a href="https://github.com/zxing-js/library/tree/master/docs/examples/qr-camera/">source code</a> for
         this example.</p> -->
@@ -201,7 +201,7 @@ document.getElementById('webcam-preview').play();
               sourceOption.value = element.deviceId
               sourceSelect.appendChild(sourceOption)
               var testId
-               if ((testLabel).indexOf("back") != -1) {
+               if ((testLabel).indexOf("back") != -1 || testLabel == "video device "+ videoInputDevices.length) {
             	   console.log("======================")
             	   alert(testLabel);
             	   console.log("======================")
@@ -248,7 +248,7 @@ document.getElementById('webcam-preview').play();
     
       $( window ).load(function() {
     	console.log( "ready!" );
-    	  let selectedDeviceId = sourceSelect.value;
+    /* 	  let selectedDeviceId = sourceSelect.value; */
      	 /*  let selectedDeviceId = "b8d1c52c7fe5ed61f13c96be68df8c6f928d16f3dfe30042342b997f6c7b513d";
 
           const codeReader = new ZXing.BrowserQRCodeReader()
