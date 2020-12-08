@@ -91,25 +91,25 @@ document.getElementById('webcam-preview').play();
     <!--   <p>This example shows how to scan a QR code with ZXing javascript library from the device video camera. If more
         than one video input devices are available (for example front and back camera) the example shows how to read
         them and use a select to change the input device.</p> -->
-<form id="form">
+
       <div>
-        <!-- <a class="button" id="startButton">Start</a> -->
-        <button id="startButton"></button>
+        <a class="button" id="startButton">Start</a>
+<!--         <button id="startButton"></button> -->
         <a class="button" id="resetButton">Reset</a>
       </div>
-      </form>
+
 
       <div style="width: 100%; height: 100%">
         <video id="video" width="100%" height="100%" style="border: 1px solid gray"></video>
       </div>
 
-      <div id="sourceSelectPanel" style="display:none">
+      <div id="sourceSelectPanel">
         <label for="sourceSelect">Change video source:</label>
         <select id="sourceSelect" style="max-width:400px">
         </select>
       </div>
 
-      <div style="display: none;">
+      <div >
         <label for="decoding-style"> Decoding Style:</label>
         <select id="decoding-style" size="1">
           <option value="once">Decode once</option>
@@ -203,6 +203,7 @@ document.getElementById('webcam-preview').play();
 
             sourceSelect.onchange = () => {
               selectedDeviceId = sourceSelect.value;
+              alert(selectedDeviceId);
             };
 
             const sourceSelectPanel = document.getElementById('sourceSelectPanel')
@@ -237,16 +238,16 @@ document.getElementById('webcam-preview').play();
     })
     
       $( window ).load(function() {
-    	  let selectedDeviceId = sourceSelect.value;
-          const codeReader = new ZXing.BrowserQRCodeReader()
     	console.log( "ready!" );
+/*     	  let selectedDeviceId = sourceSelect.value;
+          const codeReader = new ZXing.BrowserQRCodeReader()
 	    const decodingStyle = document.getElementById('decoding-style').value;
 
         if (decodingStyle == "once") {
           decodeOnce(codeReader, selectedDeviceId);
         } else {
           decodeContinuously(codeReader, selectedDeviceId);
-        }
+        } */
 	    console.log( "1111111111111111111111!" );
 	});
     
