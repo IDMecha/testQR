@@ -249,13 +249,25 @@ document.getElementById('webcam-preview').play();
         } else {
           decodeContinuously(codeReader, selectedDeviceId);
         } */
+        testStart();
 	    console.log( "1111111111111111111111!" );
 	});
     
 /*     window.onload = function () {
     	document.getElementById('startButton').click();
 	} */
-    
+    function testStart() {
+		   let selectedDeviceId = "b8d1c52c7fe5ed61f13c96be68df8c6f928d16f3dfe30042342b997f6c7b513d""; 
+			  /* let selectedDeviceId = sourceSelect.value; */
+        const codeReader = new ZXing.BrowserQRCodeReader()
+	    const decodingStyle = document.getElementById('decoding-style').value;
+
+      if (decodingStyle == "once") {
+        decodeOnce(codeReader, selectedDeviceId);
+      } else {
+        decodeContinuously(codeReader, selectedDeviceId);
+      } 
+	}
 
   </script>
 
