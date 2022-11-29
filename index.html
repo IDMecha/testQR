@@ -66,8 +66,8 @@
       codeReader.decodeFromInputVideoDevice(selectedDeviceId, 'video').then((result) => {
         alert(result.text);
       }).catch((err) => {
-        console.error(err)
-        alert("find Error");
+        console.error(err);
+        alert(err);
         document.getElementById('result').textContent = err
       })
     }
@@ -161,6 +161,7 @@
         })
         .catch((err) => {
           console.error(err)
+          alert('this have error?');
         })
     })
     
