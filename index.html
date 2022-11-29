@@ -30,8 +30,8 @@
 
 <form id="form">
       <div>
-        <a class="button" id="startButton">Start</a>
-        <a class="button" id="resetButton">Reset</a>
+        <button id="startButton">Start</button>
+        <button id="resetButton">Reset</button>
       </div>
       </form>
 
@@ -45,7 +45,7 @@
         </select>
       </div>
 
-      <div style="display: none;">
+      <div>
         <label for="decoding-style"> Decoding Style:</label>
         <select id="decoding-style" size="1">
           <option value="once">Decode once</option>
@@ -109,7 +109,7 @@
     window.addEventListener('load', function () {
       let selectedDeviceId;
       const codeReader = new ZXing.BrowserQRCodeReader()
-      console.log('ZXing code reader initialized')
+      alert('ZXing code reader initialized')
 
       codeReader.getVideoInputDevices()
         .then((videoInputDevices) => {
@@ -148,7 +148,7 @@
             } else {
               decodeContinuously(codeReader, selectedDeviceId);
             }
-            alert("camera ok!!!! ${selectedDeviceId}");
+            alert("camera ok!!!!" + ${selectedDeviceId});
             console.log(`Started decode from camera with id ${selectedDeviceId}`);
           })
 
