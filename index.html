@@ -67,6 +67,7 @@
         alert(result.text);
       }).catch((err) => {
         console.error(err)
+        alert("find Error");
         document.getElementById('result').textContent = err
       })
     }
@@ -138,8 +139,7 @@
           }
 
           document.getElementById('startButton').addEventListener('click', () => {
-			
-        	alert("camera is start!");  
+
         	  
             const decodingStyle = document.getElementById('decoding-style').value;
 
@@ -148,14 +148,14 @@
             } else {
               decodeContinuously(codeReader, selectedDeviceId);
             }
-
-            console.log(`Started decode from camera with id ${selectedDeviceId}`)
+            alert("camera ok!!!! ${selectedDeviceId}");
+            console.log(`Started decode from camera with id ${selectedDeviceId}`);
           })
 
           document.getElementById('resetButton').addEventListener('click', () => {
-            codeReader.reset()
+            codeReader.reset();
             document.getElementById('result').textContent = '';
-            console.log('Reset.')
+            alert('Reset.');
           })
 
         })
