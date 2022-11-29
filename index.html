@@ -30,8 +30,8 @@
 
 <form id="form">
       <div>
-        <button id="startButton">Start</button>
-        <button id="resetButton">Reset</button>
+        <a id="startButton">Start</a>
+        <a id="resetButton">Reset</a>
       </div>
       </form>
 
@@ -119,15 +119,11 @@
             videoInputDevices.forEach((element) => {
               const sourceOption = document.createElement('option')
               sourceOption.text = element.label
-              console.log(element.label)
+              alert(element.label)
               var testLabel = element.label
               sourceOption.value = element.deviceId
               sourceSelect.appendChild(sourceOption)
-              var testId
-               if ((testLabel).indexOf("back") != -1 || testLabel == "Video device "+ videoInputDevices.length) {
-            	   selectedDeviceId = element.deviceId;
-            	   qrScanner(selectedDeviceId);
-			}
+              
             })
 
             sourceSelect.onchange = () => {
